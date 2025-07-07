@@ -9,4 +9,6 @@ africastalking
 psycopg2-binary
 slowapi
 boto3
+pillow
+python-multipart
 # asyncpg

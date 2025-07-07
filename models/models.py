@@ -36,8 +36,10 @@ class TripCreate(BaseModel):
     image_url: Optional[str] = None
     start_date: datetime
     end_date: datetime
+    ratings: float = 0.0
     max_capacity: int
     required_staff: int
+    status: TripStatus = TripStatus.ACTIVE
     gallery: Optional[List[str]] = None
 
 class TripResponse(BaseModel):
@@ -50,6 +52,7 @@ class TripResponse(BaseModel):
     end_date: datetime
     status: TripStatus
     max_capacity: int
+    ratings: float = 0.0
     required_staff: int
     gallery: Optional[List[str]] = None
     booked_users: List[UserFull]

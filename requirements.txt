@@ -8,4 +8,5 @@ sqlalchemy
 africastalking
 psycopg2-binary
 slowapi
+boto3
 # asyncpg

@@ -1,14 +1,9 @@
 fastapi[all]
 uvicorn
-clerk-backend-api
 requests
 python-dotenv
 sqlalchemy
-# sqlalchemy[asyncio]
-africastalking
 psycopg2-binary
-slowapi
 boto3
 pillow
 python-multipart
-# asyncpg

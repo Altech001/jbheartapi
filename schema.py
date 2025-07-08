@@ -77,7 +77,7 @@ class Trip(Base):
 
 class BookForm(Base):
     __tablename__ = "book_form"
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     name = Column(String(100), nullable=False)
     email = Column(String(100), nullable=False)
     phone = Column(String(15), nullable=True)
@@ -91,3 +91,35 @@ class BookForm(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
 
 
+#########################
+class Destinations(Base):
+    __tablename__ = "destinations"
+
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    title = Column(String, default="", nullable=False)
+    description = Column(String, default="Home to JB Tours", nullable=False)
+    key_highlights = Column(JSONB, default=[
+        "Mountain gorilla trekking",
+        "UNESCO World Heritage Site",
+        "348 species of birds",
+        "Ancient forest ecosystem"
+    ], nullable=False)
+    ratings= Column(Float, default=0.0)
+    d_images = Column(JSONB, default={}, nullable=False)
+    
+    
+class Posts(Base):
+    __tablename__ = "posts"
+
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    title = Column(String, nullable=False)
+    content = Column(Text, nullable=False)
+    metadata = Column(JSONB, default=dict, nullable=False)
+    thumbnail = Column(JSONB, default=dict, nullable=False)
+    comment = Column(Text, nullable=True)
+    likes = Column(Integer, default=0, nullable=False)
+    
+    author_name = Column(String, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
+    is_published = Column(Boolean, default=False, nullable=False)

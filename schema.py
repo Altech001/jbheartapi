@@ -114,7 +114,7 @@ class Posts(Base):
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     title = Column(String, nullable=False)
     content = Column(Text, nullable=False)
-    metadata = Column(JSONB, default=dict, nullable=False)
+    post_metadata = Column(JSONB, default=dict, nullable=False)
     thumbnail = Column(JSONB, default=dict, nullable=False)
     comment = Column(Text, nullable=True)
     likes = Column(Integer, default=0, nullable=False)

@@ -73,5 +73,7 @@ app.include_router(photo_router)
 app.include_router(book_router)
 app.include_router(bookform_router)
 app.include_router(video_router)
+app.include_router(posts_router)
+app.include_router(destiny_router)
 
 

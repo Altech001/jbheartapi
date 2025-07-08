@@ -6,8 +6,6 @@ from routes.videos import video_router
 
 
 from fastapi.middleware.cors import CORSMiddleware
-
-
 from routes.destinations import destiny_router
 from routes.posts import posts_router
 

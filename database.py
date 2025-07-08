@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DB_URI = os.getenv("DB_URI","postgresql://postgres:ZlNpMQlBYvNZYXxhmcllimZBdpBBVlWW@shuttle.proxy.rlwy.net:49864/railway")
+DB_URI = os.getenv("DB_URI","postgresql://jb_97wf_user:Bh0dmhnqylUY0DSTZWE9DOFrnYrgIWEL@dpg-d1lrk1emcj7s73asan80-a.oregon-postgres.render.com/jb_97wf")
 
 # DB_URI = "postgresql://postgres:cYIJWKGfYfGPMYzSWfMyxccBtRImQWuj@maglev.proxy.rlwy.net:53691/railway"
 engine = create_engine(DB_URI, connect_args={"sslmode": "require"})

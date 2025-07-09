@@ -45,6 +45,8 @@ class User(Base):
     name = Column(String(100), nullable=False)
     email = Column(String(100), unique=True, nullable=False)
     phone = Column(String(15), nullable=True)
+    guest_capacity = Column(Integer, nullable=True)
+    total_price = Column(Float, default=0.0)
     is_admin = Column(Boolean, default=False)
     
     trip_id = Column(String(36), ForeignKey("trips.id"), nullable=True)
@@ -81,13 +83,13 @@ class BookForm(Base):
     name = Column(String(100), nullable=False)
     email = Column(String(100), nullable=False)
     phone = Column(String(15), nullable=True)
-    guest_capcity = Column(String, nullable=False , default="1")
+    guest_capcity = Column(Integer, nullable=True)
     checkin_date = Column(DateTime(timezone=True), nullable=False)
-    checkout_date = Column(DateTime(timezone=True), nullable=False)
+    checkout_date = Column(DateTime(timezone=True), nullable=True)
     special_requests = Column(Text, nullable=True, default="None")
     activites = Column(Text, nullable=True, default="None")
-    destination = Column(String, nullable=False)
-    message = Column(Text, nullable=False)
+    destination = Column(String, nullable=True)
+    message = Column(Text, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
 
 
@@ -105,7 +107,7 @@ class Destinations(Base):
         "Ancient forest ecosystem"
     ], nullable=False)
     ratings= Column(Float, default=0.0)
-    d_images = Column(JSONB, default={}, nullable=False)
+    d_images = Column(JSONB, default={}, nullable=True)
     
     
 class Posts(Base):
@@ -113,13 +115,13 @@ class Posts(Base):
 
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     title = Column(String, nullable=False)
-    content = Column(Text, nullable=False)
-    post_metadata = Column(JSONB, default=dict, nullable=False)
-    thumbnail = Column(JSONB, default=dict, nullable=False)
+    content = Column(Text, nullable=True)
+    post_metadata = Column(JSONB, default=dict, nullable=True)
+    thumbnail = Column(JSONB, default=dict, nullable=True)
     comment = Column(Text, nullable=True)
-    likes = Column(Integer, default=0, nullable=False)
+    likes = Column(Integer, default=0, nullable=True)
     
     author_name = Column(String, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
-    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now(), nullable=False)
     is_published = Column(Boolean, default=False, nullable=False)

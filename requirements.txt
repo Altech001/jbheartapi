@@ -6,4 +6,6 @@ sqlalchemy
 psycopg2-binary
 boto3
 pillow
+fastapi-mail
 python-multipart
+pdfkit

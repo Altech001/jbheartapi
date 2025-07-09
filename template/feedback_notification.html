@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Feedback - JB HeartFelt Tours</title>
+    <style>
+        /* Reset and base styles for email compatibility */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f3;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #1a3c34;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .header img {
+            max-width: 120px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .header p {
+            font-size: 14px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 20px 30px;
+        }
+        .content h2 {
+            font-size: 20px;
+            color: #2a6041;
+            margin-bottom: 15px;
+        }
+        .feedback-box {
+            background-color: #f7f9f8;
+            padding: 15px;
+            border-left: 4px solid #2a6041;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .feedback-box p {
+            color: #555555;
+            font-size: 15px;
+            margin: 0;
+        }
+        .details {
+            background-color: #f7f9f8;
+            padding: 15px;
+            border-left: 4px solid #2a6041;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555555;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        .details strong {
+            color: #2a6041;
+        }
+        .footer {
+            background-color: #1a2521;
+            color: #b0b8b2;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer a {
+            color: #4f9a77;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+            }
+            .content {
+                padding: 15px 20px;
+            }
+            .header {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 20px;
+            }
+        }
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a2521;
+            }
+            .container {
+                background-color: #26332f;
+            }
+            .content, .details p, .feedback-box p {
+                color: #d0d8d2;
+            }
+            .content h2, .details strong {
+                color: #6bb592;
+            }
+            .feedback-box, .details {
+                background-color: #2e3b37;
+            }
+            .header {
+                background-color: #14241f;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="https://via.placeholder.com/120x40?text=JB+Logo" alt="JB HeartFelt Tours Logo">
+            <h1>New JB HeartFelt Client Feedback</h1>
+            <p>Connecting Hearts Through Travel</p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h2>Feedback Received 🌿</h2>
+            <div class="feedback-box">
+                <p>{{ message }}</p>
+            </div>
+            <div class="details">
+                <p><strong>Client Name:</strong> {{ client_name }}</p>
+                <p><strong>Client Phone:</strong> {{ client_phone }}</p>
+                <p><strong>Client Email:</strong> {{ client_email }}</p>
+                <p><strong>Submitted On:</strong> {{ submitted_on | default("N/A") }}</p>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>© {{ year | default("2025") }} JB HeartFelt Tours and Travels LTD. All rights reserved.</p>
+            <p>Internal Communication - Do Not Forward</p>
+            <p>Contact us at <a href="mailto:support@jbheartfelt.com">support@jbheartfelt.com</a></p>
+        </div>
+    </div>
+</body>
+</html>

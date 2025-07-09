@@ -3,6 +3,7 @@ from routes.photos import photo_router
 from routes.books import book_router
 from routes.bookform import bookform_router
 from routes.videos import video_router
+from utils.jbmails import jbmail_router
 
 
 from fastapi.middleware.cors import CORSMiddleware
@@ -75,5 +76,7 @@ app.include_router(bookform_router)
 app.include_router(video_router)
 app.include_router(posts_router)
 app.include_router(destiny_router)
+app.include_router(jbmail_router)
+
 
 

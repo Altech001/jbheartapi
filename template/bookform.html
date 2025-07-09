@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Booking with JB HeartFelt Tours</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f3;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #1a3c34;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .header img {
+            max-width: 120px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .header p {
+            font-size: 14px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 20px 30px;
+        }
+        .content h2 {
+            font-size: 20px;
+            color: #2a6041;
+            margin-bottom: 15px;
+        }
+        .content p {
+            color: #555555;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+        .details {
+            background-color: #f7f9f8;
+            padding: 15px;
+            border-left: 4px solid #2a6041;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .details p {
+            color: #555555;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .details strong {
+            color: #2a6041;
+            width: 150px;
+            display: inline-block;
+        }
+        .footer {
+            background-color: #1a2521;
+            color: #b0b8b2;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer a {
+            color: #4f9a77;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+            }
+            .content {
+                padding: 15px 20px;
+            }
+            .header {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 20px;
+            }
+            .details strong {
+                width: auto;
+                display: block;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a2521;
+            }
+            .container {
+                background-color: #26332f;
+            }
+            .content p, .details p {
+                color: #d0d8d2;
+            }
+            .content h2, .details strong {
+                color: #6bb592;
+            }
+            .details {
+                background-color: #2e3b37;
+            }
+            .header {
+                background-color: #14241f;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://via.placeholder.com/120x40?text=JB+Logo" alt="JB HeartFelt Tours Logo">
+            <h1>Your Booking Confirmation</h1>
+            <p>Explore Nature with Heart</p>
+        </div>
+        <div class="content">
+            <h2>Hello, {{ name }} 🌿</h2>
+            <p>Thank you for booking with JB HeartFelt Tours and Travels LTD. Your adventure is confirmed, and we’re excited to make it unforgettable! Attached is your booking receipt.</p>
+            <div class="details">
+                <p><strong>Booking ID:</strong> {{ id }}</p>
+                <p><strong>Name:</strong> {{ name }}</p>
+                <p><strong>Email:</strong> {{ email }}</p>
+                <p><strong>Phone:</strong> {{ phone }}</p>
+                <p><strong>Guests:</strong> {{ guest_capacity }}</p>
+                <p><strong>Check-in:</strong> {{ checkin_date }}</p>
+                <p><strong>Check-out:</strong> {{ checkout_date }}</p>
+                <p><strong>Destination:</strong> {{ destination }}</p>
+                <p><strong>Activities:</strong> {{ activities }}</p>
+                <p><strong>Special Requests:</strong> {{ special_requests }}</p>
+                <p><strong>Total Price:</strong> ${{ total_price }}</p>
+                <p><strong>Booked On:</strong> {{ created_at }}</p>
+            </div>
+            <p>If you have any questions, contact us at <a href="mailto:support@jbheartfelt.com">support@jbheartfelt.com</a>. We’ll respond within 24 hours.</p>
+        </div>
+        <div class="footer">
+            <p>© 2025 JB HeartFelt Tours and Travels LTD. All rights reserved.</p>
+            <p><a href="#">Unsubscribe</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+</body>
+</html>

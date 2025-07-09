@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB HeartFelt Tours and Travels</title>
+    <style>
+        /* Reset and base styles for email compatibility */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f3;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #1a3c34;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .header img {
+            max-width: 120px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .header p {
+            font-size: 14px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 20px 30px;
+        }
+        .content h2 {
+            font-size: 20px;
+            color: #2a6041;
+            margin-bottom: 15px;
+        }
+        .content p {
+            color: #555555;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+        .info-box {
+            background-color: #f7f9f8;
+            padding: 15px;
+            border-left: 4px solid #2a6041;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .info-box p {
+            color: #555555;
+            font-size: 15px;
+            margin: 0;
+        }
+        .info-box a {
+            color: #2a6041;
+            text-decoration: underline;
+        }
+        .content a.button {
+            display: inline-block;
+            background-color: #2a6041;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .content a.button:hover {
+            background-color: #1a3c34;
+        }
+        .footer {
+            background-color: #1a2521;
+            color: #b0b8b2;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer a {
+            color: #4f9a77;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+            }
+            .content {
+                padding: 15px 20px;
+            }
+            .header {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 20px;
+            }
+        }
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a2521;
+            }
+            .container {
+                background-color: #26332f;
+            }
+            .content p, .info-box p {
+                color: #d0d8d2;
+            }
+            .content h2 {
+                color: #6bb592;
+            }
+            .info-box {
+                background-color: #2e3b37;
+            }
+            .info-box a {
+                color: #6bb592;
+            }
+            .content a.button {
+                background-color: #6bb592;
+            }
+            .content a.button:hover {
+                background-color: #4f9a77;
+            }
+            .header {
+                background-color: #14241f;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://via.placeholder.com/120x40?text=JB+Logo" alt="JB HeartFelt Tours Logo">
+            <h1>Welcome to JB HeartFelt Tours</h1>
+            <p>Explore Nature with Heart</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <h2>Hello, {{ name | default("Traveler") }} 🌿</h2>
+            <p>Thank you for reaching out to JB HeartFelt Tours and Travels LTD. Your journey with us begins here, and we’re thrilled to connect! Expect a response from our team within 24 hours.</p>
+            <div class="info-box">
+                <p><strong>Need help now?</strong> Visit our <a href="#">Travel Hub</a> for instant answers to your questions.</p>
+            </div>
+            <p>Have questions or ready to plan your next adventure? Our team is here to make it unforgettable. Thank you for choosing us! 🌍</p>
+            {% if action_url %}
+            <a href="{{ action_url }}" class="button">{{ action_text | default("Plan Your Journey →") }}</a>
+            {% endif %}
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© {{ year | default("2025") }} JB HeartFelt Tours and Travels LTD. All rights reserved.</p>
+            <p>Need assistance? Reach us at <a href="mailto:{{ contact_email | default("support@jbheartfelt.com") }}">{{ contact_email | default("support@jbheartfelt.com") }}</a></p>
+            <p><a href="#">Unsubscribe</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+</body>
+</html>

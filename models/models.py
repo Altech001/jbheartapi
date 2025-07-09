@@ -13,11 +13,14 @@ class TripStatus(str, Enum):
 class UserCreate(BaseModel):
     name: str
     email: str
+    guest_capacity: Optional[int] = None
+    total_price: float
     phone: Optional[str] = None
 
 class UserMinimal(BaseModel):
     user_id: str
     name: str
+    total_price: float
 
 class UserFull(BaseModel):
     user_id: str
@@ -65,23 +68,23 @@ class BookFormCreate(BaseModel):
     name: str
     email: EmailStr
     phone: Optional[str] = None
-    guest_capacity: str = "1"
+    guest_capcity: int = 1
     checkin_date: datetime
     checkout_date: datetime
     special_requests: Optional[str] = "None"
-    activities: Optional[str] = "None"
+    activites: Optional[str] = "None"
     destination: str
     message: str
 
 class BookFormUpdate(BaseModel):
-    name: Optional[str] = None
+    name: Optional[str] = None 
     email: Optional[EmailStr] = None
     phone: Optional[str] = None
-    guest_capacity: Optional[str] = None
+    guest_capcity: Optional[int] = None
     checkin_date: Optional[datetime] = None
     checkout_date: Optional[datetime] = None
     special_requests: Optional[str] = None
-    activities: Optional[str] = None
+    activites: Optional[str] = None
     destination: Optional[str] = None
     message: Optional[str] = None
 
@@ -90,11 +93,11 @@ class BookFormResponse(BaseModel):
     name: str
     email: str
     phone: Optional[str]
-    guest_capacity: str
+    guest_capcity: int
     checkin_date: datetime
     checkout_date: datetime
     special_requests: Optional[str]
-    activities: Optional[str]
+    activites: Optional[str]
     destination: str
     message: str
     created_at: datetime
@@ -113,7 +116,7 @@ class VideoUpload(BaseModel):
 class PostCreate(BaseModel):
     title: str
     content: str
-    metadata: Dict = {}
+    post_metadata: Dict = {}
     thumbnail: Dict = {}
     comment: Optional[str] = None
     likes: int = 0
@@ -123,7 +126,7 @@ class PostCreate(BaseModel):
 class PostUpdate(BaseModel):
     title: Optional[str] = None
     content: Optional[str] = None
-    metadata: Optional[Dict] = None
+    post_metadata: Optional[Dict] = None
     thumbnail: Optional[Dict] = None
     comment: Optional[str] = None
     likes: Optional[int] = None
@@ -134,7 +137,7 @@ class PostResponse(BaseModel):
     id: str
     title: str
     content: str
-    metadata: Dict
+    post_metadata: Dict
     thumbnail: Dict
     comment: Optional[str]
     likes: int
@@ -179,3 +182,13 @@ class DestinationResponse(BaseModel):
 
     class Config:
         orm_mode = True
+        
+        
+        
+######### Email
+class ClientData(BaseModel):
+    client_name: str
+    client_phone: str
+    client_email: str
+    client_message: str
+    submitted_on: str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

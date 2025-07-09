@@ -1,0 +1,74 @@
+% Setting up the document class and geometry
+\documentclass[a4paper,12pt]{article}
+\usepackage[margin=1in]{geometry}
+
+% Including necessary packages
+\usepackage{booktabs}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{datetime}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Defining colors
+\definecolor{forestgreen}{RGB}{26,60,52}
+\definecolor{darkgreen}{RGB}{42,96,65}
+
+% Setting up fonts and headers
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
+\pagestyle{fancy}
+\fancyhead[L]{\includegraphics[width=2cm]{logo.png}}
+\fancyhead[C]{\textbf{JB HeartFelt Tours and Travels LTD \\ Booking Receipt}}
+\fancyhead[R]{}
+\fancyfoot[C]{\footnotesize Page \thepage\ of \pageref{LastPage}}
+\fancyfoot[L]{\footnotesize Issued on: \today}
+\fancyfoot[R]{\footnotesize support@jbheartfelt.com}
+
+% Beginning the document
+\begin{document}
+
+% Adding title and company details
+\begin{center}
+    \vspace{1cm}
+    {\Large \color{darkgreen} Booking Receipt} \\
+    \vspace{0.5cm}
+    {\normalsize JB HeartFelt Tours and Travels LTD} \\
+    {\small Explore Nature with Heart}
+\end{center}
+
+% Adding booking details
+\vspace{1cm}
+\section*{Booking Details}
+\begin{tabular}{@{}ll@{}}
+    \textbf{Booking ID:} & {{ id }} \\
+    \textbf{Name:} & {{ name }} \\
+    \textbf{Email:} & {{ email }} \\
+    \textbf{Phone:} & {{ phone }} \\
+    \textbf{Number of Guests:} & {{ guest_capacity }} \\
+    \textbf{Check-in Date:} & {{ checkin_date }} \\
+    \textbf{Check-out Date:} & {{ checkout_date }} \\
+    \textbf{Destination:} & {{ destination }} \\
+    \textbf{Activities:} & {{ activities }} \\
+    \textbf{Special Requests:} & {{ special_requests }} \\
+    \textbf{Total Price:} & \$ {{ total_price }} \\
+    \textbf{Booked On:} & {{ created_at }} \\
+\end{tabular}
+
+% Adding terms and conditions
+\vspace{1cm}
+\section*{Terms and Conditions}
+\begin{itemize}
+    \item Payment is due upon receipt unless otherwise agreed.
+    \item Cancellations must be made 7 days prior to check-in for a full refund.
+    \item Contact us at support@jbheartfelt.com for any inquiries.
+\end{itemize}
+
+% Adding footer note
+\vspace{1cm}
+\begin{center}
+    {\small Thank you for choosing JB HeartFelt Tours and Travels LTD!}
+\end{center}
+
+\end{document}
